@@ -1,0 +1,371 @@
+ html {width: 100%; height: 100%;}
+   
+   body {
+	   font-family: 'Trebuchet MS', sans-serif;
+	   font-size: 15px;
+	   font-weight: 400;
+	   min-width: 320px;
+	   height: 100%;
+	   margin: 0;
+	   background-color: #000; 
+   }
+   
+   .index-page {
+	   display:flex; 
+	   width: 100%;
+	   min-height: 100%;
+   }
+    
+   .catfood {
+	   position: relative;
+	   display: flex;
+	   justify-content: center;
+	   align-items: center;
+	   width: 100%;
+	   min-height: 100%;
+	   background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, transparent 50%, rgba(0, 0, 0, .5) 100%), url('../img/cover.jpg');
+   }
+   
+   .catfood__container {
+	box-sizing: border-box;
+	width: 100%;
+   }
+   
+   .catfood__title {
+	font-family: 'Exo2Thin';
+	font-size: 36px;
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 27px;
+	padding: 0 15px;
+	text-align: center;
+	color: #fff;
+   }
+   
+   .catfood__list {
+	   display: flex;
+	   flex-direction: column;
+	   width: 100%;
+	   justify-content: center;
+	   align-items: center;
+   }
+   
+   .kote-food {
+	   position: relative;
+	   width: 320px;
+	   margin-top: 45px;
+	   margin-bottom: 20px;
+   }
+   .kote-food:before {
+	   position: absolute;
+	   z-index: 0;
+	   top: -45px;
+	   left: 22px;
+	   display: inline-block;
+	   box-sizing: border-box;
+	   width: 160px;
+	   height: 45px;
+	   content: '';
+	   cursor: pointer;
+	   transform: skew(-45deg);
+	   border-top: 4px solid #1698d9;
+	   border-left: 4px solid #1698d9;
+	   background-color: #f2f2f2;
+   }
+   .kote-food:after {
+	   position: absolute;
+	   z-index: 0;
+	   top: -45px;
+	   right: 0;
+	   display: inline-block;
+	   width: 160px;
+	   height: 45px;
+	   content: '';
+	   cursor: pointer;
+	   border-top: 4px solid #1698d9;
+	   border-right: 4px solid #1698d9;
+	   border-top-right-radius: 12px;
+	   background-color: #f2f2f2;
+   }
+   .kote-food--disabled:after,
+   .kote-food--disabled:before
+   {
+	   border-color: #b3b3b3;
+   }
+   .kote-food--disabled:hover
+   {
+	   border-color: #b3b3b3;
+   }
+   .kote-food--disabled:hover:after,
+   .kote-food--disabled:hover:before
+   {
+	   border-color: #b3b3b3;
+   }
+   .kote-food--checked:after,
+   .kote-food--checked:before
+   {
+	   border-color: #d91667;
+   }
+   .kote-food--disabled{
+   		> .kote-food__description, .kote-food__image{
+	   		opacity: .6;
+		   }
+		.kote-food__card{
+			border-color: #b3b3b3;
+		}
+		.kote-food__buy{
+			display: none;
+		}
+		.kote-food__name{
+			color: #b3b3b3;
+		}
+		.kote-food__weight{
+			background-color: #b3b3b3;
+		}
+		.kote-food__disable{
+			display: block;
+		}
+
+	}   
+
+
+   .kote-food--checked{
+    	> .kote-food__card {
+	   		border-color: #d91667;
+		   }
+		   .kote-food__weight{
+			background-color: #d91667;
+		   }
+		   .kote-food__check{
+	   		display: block;
+			   }
+			.kote-food__buy{
+	   		display: none;
+			   }
+			   
+	}
+
+   .kote-food--checked:hover{
+	   border-color: #e52e7a;
+   }
+
+   .kote-food--checked:hover .kote-food__weight
+   {
+	   background-color: #e52e7a;
+   }
+   .kote-food--checked:hover .kote-food__card
+   {
+	   border-color: #e52e7a;
+   }
+   .kote-food--checked:hover:after,
+   .kote-food--checked:hover:before
+   {
+	   border-color: #e52e7a;
+   }
+   .kote-food--checked-hover:hover .kote-food__cancel
+   {
+	   display: inline-block;
+   }
+   .kote-food--checked-hover:hover .kote-food__promo
+   {
+	   display: none;
+   }
+   
+   .kote-food__card {
+	   position: relative;
+		box-sizing: border-box;
+	   min-height: 435px; 
+	   cursor: pointer;
+	   border: 4px solid #1698d9;
+	   border-top: 0;
+	   border-radius: 0 0 12px 12px;
+	   background-color: #f2f2f2;
+   }
+   	.kote-food__cancel {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.2;
+		position: relative;
+		z-index: 1;
+		top: -24px;
+		left: 44px;
+		display: none;
+		width: 240px;
+		margin-top: 0;
+		margin-bottom: 0;
+		cursor: pointer;
+		color: #e52e7a;
+	}
+
+   .kote-food__promo {
+	   font-size: 16px;
+	   font-weight: 400;
+	   line-height: 1.2;
+	   position: relative;
+	   z-index: 1;
+	   top: -24px;
+	   left: 44px;
+	   display: inline-block;
+	   width: 240px;
+	   margin-top: 0;
+	   margin-bottom: 0;
+	   cursor: pointer;
+	   color: #b3b3b3;
+   }
+
+   .kote-food__content {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	color: #b3b3b3;
+	}  
+
+   .kote-food__description {
+	   min-height: 160px;
+	   margin-top: -17px;
+	   padding-left: 44px;
+	   border-radius: 0 0 8px 8px;
+   }
+   
+   .kote-food__name  {
+	   font-size: 48px;
+	   font-weight: 700;
+	   line-height: 1.1;
+	   margin-top: 0;
+	   margin-bottom: 15px;
+	   margin-left: -2px;
+   }
+   
+   .kote-food__taste {
+	   font-size: 24px;
+	   display: block;
+	   margin-left: 2px;
+   }
+   
+   .kote-food__portion, .kote-food__gift, .kote-food__customer{
+	   margin: 0;
+   }
+   
+   .kote-food__portion-amount {
+	   font-weight: bold;
+   }
+   
+   .kote-food__gift-mouses b {
+	   padding-right: 3px;
+   }
+   
+   .kote-food__customer {
+	   text-transform: lowercase;
+   }
+   
+   .kote-food__weight {
+	   position: absolute;
+	   width: 80px;
+	   height: 80px;
+	   z-index: 2;
+	   right: 12px;
+	   bottom: 12px;
+	   box-sizing: border-box;
+	   padding-top: 11px;
+	   text-align: center;
+	   background-color: #1698d9;
+	   color: #fff;
+	   border-radius: 50%;
+   }
+   
+   .kote-food__weight-number{
+	   font-size: 42px;
+	   line-height: 1;
+	   display: block;
+   }
+   
+   .kote-food__weight-units{
+	   font-size: 21px;
+	   line-height: 18px;
+	   display: block;
+   }
+   
+   .kote-food__image{
+	   height: 100px;
+   }
+
+   .kote-food__buy {
+	   font-size: 13px;
+	   font-weight: 400;
+	   min-height: 14px;
+	   margin: 0;
+	   margin-top: 15px;
+	   text-align: center;
+	   color: #fff;
+   }
+   
+   .kote-food__check {
+	   font-size: 13px;
+	   font-weight: 400;
+	   display: none;
+	   margin: 0;
+	   padding-top: 15px;
+	   text-align: center;
+	   color: #fff;
+   }
+   
+   .kote-food__disable {
+	   font-size: 13px;
+	   font-weight: 400;
+	   display: none;
+	   margin: 0;
+	   padding-top: 15px;
+	   text-align: center;
+	   color: #ff6;
+   }
+   
+   .kote-food__buy-button {
+	   cursor: pointer;
+	   line-height: 1; 
+	   padding: 0;
+	   color: #1698d9;
+	   border: none;
+	   border-bottom: 1px dashed #1698d9;
+	   background-color: transparent;
+   }
+
+   .kote-food__buy-button:hover {
+	   color: #2ea8e6;
+	   border-bottom: 1px dashed #2ea8e6;
+   }
+
+   //Оптимизация для планшетных и мобильных устройств
+
+   @media (min-width: 768px) {
+	   .catfood__list {
+			flex-direction: row;
+			flex-wrap: wrap-reverse;
+	   }
+	   .kote-food {
+		   padding-bottom: 20px;
+		   margin-right: 10px;
+		   margin-left: 10px;
+	   }
+   }
+
+   @media (min-width: 1024px) {
+	   .catfood__container
+	   {
+		   max-width: 1060px;
+	   }
+	   .catfood
+	   {
+		   padding: 0;
+	   }
+	   .catfood__list
+	   {
+		   justify-content: space-between;
+	   }
+	   .kote-food
+	   {
+		   margin-right: 0;
+		   margin-bottom: 0;
+		   margin-left: 0;
+	   }
+   }
